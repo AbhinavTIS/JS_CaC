@@ -10,8 +10,8 @@ const user=  {
             }
 
             //Accessing object properies
-// console.log(user.email);            // normal method
-console.log(user["email"]);           // better method
+// console.log(user.email);            // normal way
+console.log(user["email"]);           // better way
 
             //Changing object properties
 user["email"] = "raghav@gmail.com";
