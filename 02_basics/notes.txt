@@ -1,0 +1,6 @@
+flat method and spread(...) operator are two ways to break an array into parts
+flat() needs an arguement describing the depth  
+
+Array()
+Array.from()
+Array.of()
