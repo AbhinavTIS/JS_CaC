@@ -21,8 +21,15 @@
         document.querySelector(".language").appendChild(li)
 
     }
+    function addLangeageOpti(langName){
+       const li= document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
 
+        document.querySelector(".language").appendChild(li)
+    }
+    addLangeageOpti("Ruby")
     addLanguage("Python")
+    
 </script>
 
 </html>
