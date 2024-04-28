@@ -17,8 +17,8 @@
     function addLanguage(langName) {
         const li = document.createElement("li")
         li.innerHTML = `${langName}`
-
-        document.querySelector(".language").appendChild(li)
+        const list =document.querySelector(".language")
+        list.appendChild(li)
 
     }
     function addLangeageOpti(langName){
@@ -30,6 +30,18 @@
     addLangeageOpti("Ruby")
     addLanguage("Python")
     
+    //Edit
+
+    // const secondLang = document.querySelector("li:nth-child(2)")
+    const secondLang = document.querySelectorAll("li")[1] 
+    console.log(secondLang);
+    const li = document.createElement("li")
+    li.innerHTML="JAVA"
+ 
+    secondLang.replaceWith(li)
+    
+
+
 </script>
 
 </html>
