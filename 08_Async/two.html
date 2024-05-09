@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async</title>
+</head>
+
+<body>
+    <h1>Hello Dear Peasants</h1>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+</body>
+<script>
+    let timeoutReference;
+    function sayDate() {
+        console.log('Abhinav', Date.now());
+    }
+    const start = document.querySelector('#start')
+    const stop = document.querySelector('#stop')
+    start.addEventListener('click', () => {
+        timeoutReference = setInterval(sayDate, 2000);
+    })
+
+
+    stop.addEventListener('click', () => {
+        clearInterval(timeoutReference)
+        timeoutReference = null;
+    })
+
+
+</script>
+
+</html>
