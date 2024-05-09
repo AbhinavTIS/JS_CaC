@@ -1,19 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body style="color:darkslategrey">
-0	UNSENT	Client has been created. open() not called yet.
-1	OPENED	open() has been called.
-2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
-3	LOADING	Downloading; responseText holds partial data.
-4	DONE	The operation is complete.
+
+<body style="background-color:darkslategrey">
+    0 UNSENT Client has been created. open() not called yet.
+    1 OPENED open() has been called.
+    2 HEADERS_RECEIVED send() has been called, and headers and status are available.
+    3 LOADING Downloading; responseText holds partial data.
+    4 DONE The operation is complete.
 </body>
 
 <script>
-    const request= new XMLHttpRequest()
+    const request = new XMLHttpRequest()
+    requestURL = 'https://api.github.com/users/abhinavtis'
+    // console.log(request.readyState);
+
+    request.onreadystatechange = function () {      // event(can be done using addEventListener as well)
+        // console.log(request.readyState);
+        if (request.readyState === 4) {
+            let response = this.responseText   // registering the responseText property of the request object
+            response = JSON.parse(response) // converting the string to JSON
+            console.log(response, typeof (response)); // logging the response text
+            console.log(response.url);
+        }
+
+    }
+
+    request.open('GET', requestURL)
+    request.send()
+
 </script>
+
 </html>
