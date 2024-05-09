@@ -22,7 +22,7 @@
 
     request.onreadystatechange = function () {      // event(can be done using addEventListener as well)
         // console.log(request.readyState);
-        if (request.readyState === 4) {
+        if (request.readyState === 4 && request.status === 200) {
             let response = this.responseText   // registering the responseText property of the request object
             response = JSON.parse(response) // converting the string to JSON
             console.log(response, typeof (response)); // logging the response text
